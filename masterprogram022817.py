@@ -60,9 +60,9 @@ def send_email(recipient, subject, text):
     smtpserver.close()
 
 #function to read in all aspects of configuration
-def readInput(file):
+def readInput(startingfile):
     Config = ConfigParser.ConfigParser()
-    Config.read(file)
+    Config.read(startingfile)
     
     #Main light cycle
     brightness=Config.getint("settings", "brightness") #brightness for main lights on. This will be passed to all steps, so further brightness must be adjusted via the level
