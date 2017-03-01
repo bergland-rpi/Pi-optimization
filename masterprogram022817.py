@@ -62,8 +62,7 @@ def send_email(recipient, subject, text):
 #function to read in all aspects of configuration
 def readInput(startingfile):
     Config = ConfigParser.ConfigParser()
-    Config.read(startingfile)
-    
+    Config.read(startingfile)  
     #Main light cycle
     brightness=Config.getint("settings", "brightness") #brightness for main lights on. This will be passed to all steps, so further brightness must be adjusted via the level
     R=Config.getint("settings", "R") #red spectrum for main lights on
@@ -76,7 +75,6 @@ def readInput(startingfile):
     outFile=Config.get("settings", "outfile_name") #name of output file that will save data log
     highAlarm=Config.getfloat("settings", "highAlarm") #Alarm temperature high
     lowAlarm=Config.getfloat("settings", "lowAlarm") #Alarm temperature low
-
     #Pulse
     Pulse=Config.getboolean("pulse", "Pulse") #True/false for whether a light pulse will be used
     Pulse_on=Config.getfloat("pulse", "Pulse_on") #Time in hours that pulse will start
@@ -85,20 +83,16 @@ def readInput(startingfile):
     Pulse_G=Config.getint("pulse", "Pulse_G") #green spectrum for pulse
     Pulse_B=Config.getint("pulse", "Pulse_B") #blue spectrum for pulse
     Pulse_W=Config.getint("pulse", "Pulse_W") #white spectrum for pulse
-
     #Ramp on
     Ramp_on=Config.getboolean("ramp_on", "Ramp_on") #true/false for whether a ramp will be used
     ramp_ontime=Config.getfloat("ramp_on", "Ramp_ontime") #time in hours that lights will start ramping on
-
     #Ramp off
     Ramp_off=Config.getboolean("ramp_off", "Ramp_off") #true/false for whether a ramp will be used
     ramp_offtime=Config.getfloat("ramp_off", "Ramp_offtime") #time in hours that lights will complete ramping
-
     #Heat
     Heat=Config.getboolean("heat", "Heat") #true false for whether the heater will be used
     heatOn=Config.getfloat("heat", "heatOn") #time in hours that heater should turn on
     heatOff=Config.getfloat("heat", "heatOff") #time in hours that heater should turn off
-
     #color2
     color2=Config.getboolean("color2", "color2_used") #true false for using a second color
     color2_offtime=Config.getfloat("color2", "color2_offtime") #off time for second color
@@ -106,7 +100,6 @@ def readInput(startingfile):
     G2=Config.getint("color2", "G2") #green spectrum for second color
     B2=Config.getint("color2", "B2") #blue spectrum for second color
     W2=Config.getint("color2", "W2") #white spectrum for second color
-
     #color3
     color3=Config.getboolean("color3", "color3_used") #true false for using a third color
     color3_offtime=Config.getfloat("color3", "color3_offtime") #off time for a third color
@@ -114,7 +107,6 @@ def readInput(startingfile):
     G3=Config.getint("color3", "G3") #green spectrum for third color
     B3=Config.getint("color3", "B3") #blue spectrum for third color
     W3=Config.getint("color3", "W3") #white spectrum for third color
-
 
 #define function to configure a run based on most up to date settings
 def configureSettings():
