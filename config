@@ -1,0 +1,10 @@
+Host github.com
+  HostName github.com
+  User ericksonp
+  IdentityFile ~/.ssh/id_rsa
+
+Host github-COMPANY
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_rsa_bergland.rpi
+

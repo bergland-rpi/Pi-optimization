@@ -63,9 +63,9 @@ def send_email(recipient, subject, text):
 def readInput(file):
     Config = ConfigParser.ConfigParser()
     Config.read(file)
-
+    
     #Main light cycle
-    brightness=Config.getint("settings", "brightness") #brightness for main lights on. This will be passed to all steps, so further brightness must be adjusted via the color leves.
+    brightness=Config.getint("settings", "brightness") #brightness for main lights on. This will be passed to all steps, so further brightness must be adjusted via the level
     R=Config.getint("settings", "R") #red spectrum for main lights on
     G=Config.getint("settings", "G") #green spectrum for main lights on
     B=Config.getint("settings", "B") #blue spectrum for main lights on
@@ -116,10 +116,8 @@ def readInput(file):
     W3=Config.getint("color3", "W3") #white spectrum for third color
 
 
-
 #define function to configure a run based on most up to date settings
 def configureSettings():
-
     #specify LED configuration
     LED_COUNT      = 24                 # Number of LED pixels (always 24 in ring).
     LED_PIN        = 18                 # GPIO pin connected to the pixels (must support PWM-always 18!).
