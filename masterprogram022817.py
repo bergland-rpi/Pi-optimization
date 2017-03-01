@@ -155,7 +155,8 @@ def configureSettings():
 
 #read input file on first time through program and configure
 readInput(inputfile)
-print "brightness =" brightness
+print R
+print brightness
 configureSettings()
 
 #start checking the time and performing an infinite loop
