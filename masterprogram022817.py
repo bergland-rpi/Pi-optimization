@@ -154,7 +154,7 @@ def configureSettings():
     copyfile(configpath, configcopy)
 
 #read input file on first time through program and configure
-readInput(inputfile)
+readInput(str(sys.argv[1]))
 print R
 print brightness
 configureSettings()
